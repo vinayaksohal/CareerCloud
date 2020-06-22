@@ -55,7 +55,34 @@ namespace CareerCloud.ADODataAccessLayer
 
         public IList<ApplicantEducationPoco> GetAll(params Expression<Func<ApplicantEducationPoco, object>>[] navigationProperties)
         {
-            throw new NotImplementedException();
+            SqlConnection conn = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandText = @"SELECT * FROM Applicant_Educations";
+
+            int x = 0;
+            SqlDataReader rdr = cmd.ExecuteReader();
+            ApplicantEducationPoco[] pocos = new ApplicantEducationPoco[1000];
+            while (rdr.Read())
+            {
+                ApplicantEducationPoco poco = new ApplicantEducationPoco();
+                poco.Id = rdr.GetGuid(0);
+                poco.Applicant = rdr.GetGuid(1);
+                poco.Major = rdr.GetString(2);
+                poco.CertificateDiploma = rdr.GetString(3);
+                if (rdr.IsDBNull(4))
+                    poco.StartDate = null;
+                else
+                    poco.StartDate = rdr.GetDateTime(4);
+                if (rdr.IsDBNull(5))
+                    poco.StartDate = null;
+                else
+                    poco.CompletionDate = rdr.GetDateTime(5);
+                poco.CompletionPercent = rdr.GetByte(6);
+                pocos[x] = poco;
+                x++;
+            }
+            return pocos;
         }
 
         public IList<ApplicantEducationPoco> GetList(Expression<Func<ApplicantEducationPoco, bool>> where, params Expression<Func<ApplicantEducationPoco, object>>[] navigationProperties)
@@ -65,7 +92,30 @@ namespace CareerCloud.ADODataAccessLayer
 
         public ApplicantEducationPoco GetSingle(Expression<Func<ApplicantEducationPoco, bool>> where, params Expression<Func<ApplicantEducationPoco, object>>[] navigationProperties)
         {
-            throw new NotImplementedException();
+            SqlConnection conn = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandText = @"SELECT * FROM Applicant_Educations where Id=@Id";
+
+            SqlDataReader rdr = cmd.ExecuteReader();
+            ApplicantEducationPoco poco = new ApplicantEducationPoco();
+            while (rdr.Read())
+            {
+                poco.Id = rdr.GetGuid(0);
+                poco.Applicant = rdr.GetGuid(1);
+                poco.Major = rdr.GetString(2);
+                poco.CertificateDiploma = rdr.GetString(3);
+                if (rdr.IsDBNull(4))
+                    poco.StartDate = null;
+                else
+                    poco.StartDate = rdr.GetDateTime(4);
+                if (rdr.IsDBNull(5))
+                    poco.StartDate = null;
+                else
+                    poco.CompletionDate = rdr.GetDateTime(5);
+                poco.CompletionPercent = rdr.GetByte(6);
+            }
+            return poco;
         }
 
         public void Remove(params ApplicantEducationPoco[] items)
