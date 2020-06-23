@@ -6,6 +6,6 @@ namespace CareerCloud.ADODataAccessLayer
 {
     public static class BaseAdo
     {
-        public const string connectionString = @"Data Source=USER-PC\HUMBERBRIDGING;Initial Catalog=JOB_PORTAL_DB;Integrated Security=True";
+        public const string connectionString ="Data Source=USER-PC\\HUMBERBRIDGING;Initial Catalog=JOB_PORTAL_DB;Integrated Security=True;";
     }
 }

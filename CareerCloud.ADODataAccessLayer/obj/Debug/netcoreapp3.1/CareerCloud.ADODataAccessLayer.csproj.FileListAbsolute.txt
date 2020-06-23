@@ -1,7 +1,6 @@
 C:\Users\user\source\repos\CareerCloud\CareerCloud.ADODataAccessLayer\obj\Debug\netcoreapp3.1\CareerCloud.ADODataAccessLayer.csprojAssemblyReference.cache
 C:\Users\user\source\repos\CareerCloud\CareerCloud.ADODataAccessLayer\obj\Debug\netcoreapp3.1\CareerCloud.ADODataAccessLayer.AssemblyInfoInputs.cache
 C:\Users\user\source\repos\CareerCloud\CareerCloud.ADODataAccessLayer\obj\Debug\netcoreapp3.1\CareerCloud.ADODataAccessLayer.AssemblyInfo.cs
-C:\Users\user\source\repos\CareerCloud\CareerCloud.ADODataAccessLayer\obj\Debug\netcoreapp3.1\CareerCloud.ADODataAccessLayer.csproj.CoreCompileInputs.cache
 C:\Users\user\source\repos\CareerCloud\CareerCloud.ADODataAccessLayer\bin\Debug\netcoreapp3.1\CareerCloud.ADODataAccessLayer.deps.json
 C:\Users\user\source\repos\CareerCloud\CareerCloud.ADODataAccessLayer\bin\Debug\netcoreapp3.1\CareerCloud.ADODataAccessLayer.dll
 C:\Users\user\source\repos\CareerCloud\CareerCloud.ADODataAccessLayer\bin\Debug\netcoreapp3.1\CareerCloud.ADODataAccessLayer.pdb
@@ -12,3 +11,4 @@ C:\Users\user\source\repos\CareerCloud\CareerCloud.ADODataAccessLayer\bin\Debug\
 C:\Users\user\source\repos\CareerCloud\CareerCloud.ADODataAccessLayer\obj\Debug\netcoreapp3.1\CareerCloud.ADODataAccessLayer.csproj.CopyComplete
 C:\Users\user\source\repos\CareerCloud\CareerCloud.ADODataAccessLayer\obj\Debug\netcoreapp3.1\CareerCloud.ADODataAccessLayer.dll
 C:\Users\user\source\repos\CareerCloud\CareerCloud.ADODataAccessLayer\obj\Debug\netcoreapp3.1\CareerCloud.ADODataAccessLayer.pdb
+C:\Users\user\source\repos\CareerCloud\CareerCloud.ADODataAccessLayer\obj\Debug\netcoreapp3.1\CareerCloud.ADODataAccessLayer.csproj.CoreCompileInputs.cache

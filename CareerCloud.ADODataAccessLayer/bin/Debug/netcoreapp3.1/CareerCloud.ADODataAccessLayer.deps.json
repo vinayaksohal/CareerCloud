@@ -9,7 +9,8 @@
       "CareerCloud.ADODataAccessLayer/1.0.0": {
         "dependencies": {
           "CareerCloud.DataAccessLayer": "1.0.0",
-          "CareerCloud.Pocos": "1.0.0"
+          "CareerCloud.Pocos": "1.0.0",
+          "System.Data.SqlClient": "4.8.1"
         },
         "runtime": {
           "CareerCloud.ADODataAccessLayer.dll": {}
