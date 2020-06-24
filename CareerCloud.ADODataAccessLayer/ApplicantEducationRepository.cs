@@ -97,18 +97,9 @@ namespace CareerCloud.ADODataAccessLayer
         public ApplicantEducationPoco GetSingle(Expression<Func<ApplicantEducationPoco, bool>> where, params Expression<Func<ApplicantEducationPoco, object>>[] navigationProperties)
         {
             IQueryable<ApplicantEducationPoco> pocos = GetAll().AsQueryable();
-            try
-            {
-                return pocos.Where(where).FirstOrDefault();
-                
-            }
-            catch(NullReferenceException e)
-            {
-                //Exception thrown as there is null reference for after performing remove operation on Id. So no Poco exists for that Id
-                Console.WriteLine(e);
-                return null;
-            }
-
+            pocos = pocos.Where(x => x != null);
+            return pocos.Where(where).FirstOrDefault();
+           
         }
 
         public void Remove(params ApplicantEducationPoco[] items)

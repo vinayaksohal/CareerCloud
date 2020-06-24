@@ -2,6 +2,8 @@
 using CareerCloud.Pocos;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 
@@ -12,7 +14,31 @@ namespace CareerCloud.ADODataAccessLayer
     {
         public void Add(params CompanyJobEducationPoco[] items)
         {
-            throw new NotImplementedException();
+            SqlConnection conn = new SqlConnection(BaseAdo.connectionString);
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+            conn.Open();
+            foreach (CompanyJobEducationPoco poco in items)
+            {
+                cmd.CommandText = @"INSERT INTO [dbo].[Company_Job_Educations]
+                                   ([Id]
+                                   ,[Job]
+                                   ,[Major]
+                                   ,[Importance])
+                             VALUES
+                                   (@Id
+                                   ,@Job
+                                   ,@Major
+                                   ,@Importance)";
+
+                cmd.Parameters.AddWithValue("@Id", poco.Id);
+                cmd.Parameters.AddWithValue("@Job", poco.Job);
+                cmd.Parameters.AddWithValue("@Major", poco.Major);
+                cmd.Parameters.AddWithValue("@Importance", poco.Importance);
+
+                cmd.ExecuteNonQuery();
+            }
+            conn.Close();
         }
 
         public void CallStoredProc(string name, params Tuple<string, string>[] parameters)
@@ -22,7 +48,28 @@ namespace CareerCloud.ADODataAccessLayer
 
         public IList<CompanyJobEducationPoco> GetAll(params Expression<Func<CompanyJobEducationPoco, object>>[] navigationProperties)
         {
-            throw new NotImplementedException();
+            SqlConnection conn = new SqlConnection(BaseAdo.connectionString);
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandText = @"SELECT * FROM [Company_Job_Educations]";
+            conn.Open();
+
+            int x = 0;
+            SqlDataReader rdr = cmd.ExecuteReader();
+            CompanyJobEducationPoco[] pocos = new CompanyJobEducationPoco[1200];
+            while (rdr.Read())
+            {
+                CompanyJobEducationPoco poco = new CompanyJobEducationPoco();
+                poco.Id = rdr.GetGuid(0);
+                poco.Job = rdr.GetGuid(1);
+                poco.Major = rdr.GetString(2);
+                poco.Importance = rdr.GetInt16(3);
+
+                pocos[x] = poco;
+                x++;
+            }
+            conn.Close();
+            return pocos;
         }
 
         public IList<CompanyJobEducationPoco> GetList(Expression<Func<CompanyJobEducationPoco, bool>> where, params Expression<Func<CompanyJobEducationPoco, object>>[] navigationProperties)
@@ -32,17 +79,52 @@ namespace CareerCloud.ADODataAccessLayer
 
         public CompanyJobEducationPoco GetSingle(Expression<Func<CompanyJobEducationPoco, bool>> where, params Expression<Func<CompanyJobEducationPoco, object>>[] navigationProperties)
         {
-            throw new NotImplementedException();
+            IQueryable<CompanyJobEducationPoco> pocos = GetAll().AsQueryable();
+            pocos = pocos.Where(x => x != null);
+            return pocos.Where(where).FirstOrDefault();
         }
 
         public void Remove(params CompanyJobEducationPoco[] items)
         {
-            throw new NotImplementedException();
+            SqlConnection conn = new SqlConnection(BaseAdo.connectionString);
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+            conn.Open();
+            foreach (CompanyJobEducationPoco poco in items)
+            {
+                cmd.CommandText = @"DELETE FROM [dbo].[Company_Job_Educations]
+                                  WHERE Id=@Id";
+
+                cmd.Parameters.AddWithValue("@Id", poco.Id);
+                cmd.ExecuteNonQuery();
+
+            }
+            conn.Close();
         }
 
         public void Update(params CompanyJobEducationPoco[] items)
         {
-            throw new NotImplementedException();
+            SqlConnection conn = new SqlConnection(BaseAdo.connectionString);
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+            conn.Open();
+            foreach (CompanyJobEducationPoco poco in items)
+            {
+                cmd.CommandText = @"UPDATE [dbo].[Company_Job_Educations]
+                                   SET [Id] = @Id
+                                      ,[Job] = @Job
+                                      ,[Major] = @Major
+                                      ,[Importance] = @Importance
+                                   WHERE Id=@Id";
+
+                cmd.Parameters.AddWithValue("@Id", poco.Id);
+                cmd.Parameters.AddWithValue("@Job", poco.Job);
+                cmd.Parameters.AddWithValue("@Major", poco.Major);
+                cmd.Parameters.AddWithValue("@Importance", poco.Importance);
+
+                cmd.ExecuteNonQuery();
+            }
+            conn.Close();
         }
     }
 }
