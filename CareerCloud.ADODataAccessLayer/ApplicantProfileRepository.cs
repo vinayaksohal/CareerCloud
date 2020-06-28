@@ -93,7 +93,7 @@ namespace CareerCloud.ADODataAccessLayer
                 x++;
             }
             conn.Close();
-            return pocos;
+            return pocos.Where(x => x != null).ToList();
         }
 
         public IList<ApplicantProfilePoco> GetList(Expression<Func<ApplicantProfilePoco, bool>> where, params Expression<Func<ApplicantProfilePoco, object>>[] navigationProperties)

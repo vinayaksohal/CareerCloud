@@ -65,7 +65,7 @@ namespace CareerCloud.ADODataAccessLayer
                 x++;
             }
             conn.Close();
-            return pocos;
+            return pocos.Where(x => x != null).ToList();
         }
 
         public IList<SystemLanguageCodePoco> GetList(Expression<Func<SystemLanguageCodePoco, bool>> where, params Expression<Func<SystemLanguageCodePoco, object>>[] navigationProperties)
