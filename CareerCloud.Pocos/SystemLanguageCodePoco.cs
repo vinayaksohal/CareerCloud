@@ -7,7 +7,7 @@ using System.Text;
 namespace CareerCloud.Pocos
 {
     [Table("System_Language_Codes")]
-    public class SystemLanguageCodePoco
+    public class SystemLanguageCodePoco:IPoco
     {
         [Key]
         public string LanguageID { get; set; }
@@ -15,5 +15,6 @@ namespace CareerCloud.Pocos
         public string Name { get; set; }
         [Column("Native_Name")]
         public string NativeName { get; set; }
+        public Guid Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     }
 }
