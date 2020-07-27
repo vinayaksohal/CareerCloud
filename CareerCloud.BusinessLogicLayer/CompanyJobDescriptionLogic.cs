@@ -41,10 +41,10 @@ namespace CareerCloud.BusinessLogicLayer
                     exceptions.Add(new ValidationException(301, "JobDescriptions cannot be null"));
                 }
 
-                if (exceptions.Count > 0)
-                {
-                    throw new AggregateException(exceptions);
-                }
+            }
+            if (exceptions.Count > 0)
+            {
+                throw new AggregateException(exceptions);
             }
         }
     }

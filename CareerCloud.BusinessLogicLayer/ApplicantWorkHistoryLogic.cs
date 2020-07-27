@@ -36,11 +36,10 @@ namespace CareerCloud.BusinessLogicLayer
                 {
                     exceptions.Add(new ValidationException(105, "Company name must be greater then 2 characters"));
                 }
-
-                if (exceptions.Count > 0)
-                {
-                    throw new AggregateException(exceptions);
-                }
+            }
+            if (exceptions.Count > 0)
+            {
+                throw new AggregateException(exceptions);
             }
         }
     }

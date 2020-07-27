@@ -13,6 +13,9 @@ namespace CareerCloud.Pocos
         public string Code { get; set; }
         [Column("Name")]
         public string Name { get; set; }
-        public Guid Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        //public Guid Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        
+        public ICollection<ApplicantProfilePoco> ApplicantProfiles { get; set; }
+        public ICollection<ApplicantWorkHistoryPoco> ApplicantWorkHistory { get; set; }
     }
 }

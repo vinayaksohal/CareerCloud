@@ -1,0 +1,6 @@
+C:\Users\user\source\repos\CareerCloud\CareerCloud.EntityFrameworkDataAccess\bin\Debug\netcoreapp3.1\CareerCloud.EntityFrameworkDataAccess.deps.json
+C:\Users\user\source\repos\CareerCloud\CareerCloud.EntityFrameworkDataAccess\bin\Debug\netcoreapp3.1\CareerCloud.EntityFrameworkDataAccess.dll
+C:\Users\user\source\repos\CareerCloud\CareerCloud.EntityFrameworkDataAccess\obj\Debug\netcoreapp3.1\CareerCloud.EntityFrameworkDataAccess.csprojAssemblyReference.cache
+C:\Users\user\source\repos\CareerCloud\CareerCloud.EntityFrameworkDataAccess\obj\Debug\netcoreapp3.1\CareerCloud.EntityFrameworkDataAccess.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\CareerCloud\CareerCloud.EntityFrameworkDataAccess\obj\Debug\netcoreapp3.1\CareerCloud.EntityFrameworkDataAccess.AssemblyInfo.cs
+C:\Users\user\source\repos\CareerCloud\CareerCloud.EntityFrameworkDataAccess\bin\Debug\netcoreapp3.1\appsettings.json

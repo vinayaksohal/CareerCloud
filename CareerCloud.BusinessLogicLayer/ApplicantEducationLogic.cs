@@ -47,11 +47,10 @@ namespace CareerCloud.BusinessLogicLayer
                 {
                     exceptions.Add(new ValidationException(109, "CompletionDate cannot be earlier than StartDate"));
                 }
-
-                if (exceptions.Count > 0)
-                {
-                    throw new AggregateException(exceptions);
-                }
+            }
+            if (exceptions.Count > 0)
+            {
+                throw new AggregateException(exceptions);
             }
         }
     }

@@ -38,10 +38,11 @@ namespace CareerCloud.BusinessLogicLayer
                     exceptions.Add(new ValidationException(112, "AppliCurrentRate cannot be negative"));
                 }
 
-                if (exceptions.Count > 0)
-                {
-                    throw new AggregateException(exceptions);
-                }
+                
+            }
+            if (exceptions.Count > 0)
+            {
+                throw new AggregateException(exceptions);
             }
         }
 

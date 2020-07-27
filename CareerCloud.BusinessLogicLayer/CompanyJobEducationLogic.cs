@@ -45,10 +45,10 @@ namespace CareerCloud.BusinessLogicLayer
                     exceptions.Add(new ValidationException(201, "Importance cannot be less than 0 "));
                 }
                 
-                if (exceptions.Count > 0)
-                {
-                    throw new AggregateException(exceptions);
-                }
+            }
+            if (exceptions.Count > 0)
+            {
+                throw new AggregateException(exceptions);
             }
         }
     }

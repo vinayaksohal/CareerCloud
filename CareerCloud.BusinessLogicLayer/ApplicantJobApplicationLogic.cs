@@ -34,10 +34,10 @@ namespace CareerCloud.BusinessLogicLayer
                     exceptions.Add(new ValidationException(110, "ApplicationDate cannot be greater than today"));
                 }
                
-                if (exceptions.Count > 0)
-                {
-                    throw new AggregateException(exceptions);
-                }
+            }
+            if (exceptions.Count > 0)
+            {
+                throw new AggregateException(exceptions);
             }
         }
     }
