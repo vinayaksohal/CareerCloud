@@ -37,19 +37,19 @@ namespace CareerCloud.Pocos
         public string EmailAddress { get;set;}
         [Column("Phone_Number")]
 
-        public string? PhoneNumber { get;set;}
+        public string PhoneNumber { get;set;}
         [Column("Full_Name")]
 
-        public string? FullName { get;set;}
+        public string FullName { get;set;}
         [Column("Force_Change_Password")]
 
         public Boolean ForceChangePassword { get;set;}
         [Column("Prefferred_Language")]
 
-        public string? PrefferredLanguage { get;set;}
-        [Column("Time_Stamp")]
+        public string PrefferredLanguage { get;set;}
+        [Column("Time_Stamp")][Timestamp]
 
-        public Byte[]? TimeStamp {get;set;}
+        public Byte[] TimeStamp {get;set;}
         public ICollection<ApplicantProfilePoco> ApplicantProfiles { get; set; }
         public ICollection<SecurityLoginsLogPoco> SecurityLoginsLogs { get; set; }
         public ICollection<SecurityLoginsRolePoco> SecurityLoginsRoles { get; set; }

@@ -11,11 +11,11 @@ namespace CareerCloud.Pocos
     {
         [Key]
         public Guid Id { get; set; }
-        [ForeignKey("SecurityLoginPoco")]
+        [Column("Login")]
         public Guid Login { get; set; }
-        [ForeignKey("SecurityRolePoco")]
+        [Column("Role")]
         public Guid Role { get; set; }
-        [Column("Time_Stamp")]
+        [Column("Time_Stamp")][Timestamp]
         public Byte[] TimeStamp { get; set; }
 
         public virtual SecurityLoginPoco SecurityLogins { get; set; }

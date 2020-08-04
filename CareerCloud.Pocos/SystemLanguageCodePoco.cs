@@ -15,7 +15,9 @@ namespace CareerCloud.Pocos
         public string Name { get; set; }
         [Column("Native_Name")]
         public string NativeName { get; set; }
-       // public Guid Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        
         public ICollection<CompanyDescriptionPoco> CompanyDescriptions { get; set; }
+        [NotMapped]
+        public Guid Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     }
 }

@@ -11,7 +11,7 @@ namespace CareerCloud.Pocos
     {
         [Key]
         public Guid Id { get; set; }
-        [ForeignKey("CompanyJobPoco")]
+        [Column("Job")]
         public Guid Job { get; set; }
         [Column("Skill")]
         public string Skill { get; set; }
@@ -19,7 +19,7 @@ namespace CareerCloud.Pocos
         public string SkillLevel { get; set; }
         [Column("Importance")]
         public Int32 Importance { get; set; }
-        [Column("Time_Stamp")]
+        [Column("Time_Stamp")][Timestamp]
         public Byte[] TimeStamp { get; set; }
 
         public virtual CompanyJobPoco CompanyJobs { get; set; }

@@ -11,15 +11,14 @@ namespace CareerCloud.Pocos
     {
         [Key]
         public Guid Id { get; set; }
-        [ForeignKey("ApplicantProfilePoco")]
+        [Column("Applicant")]
         public Guid Applicant { get; set; }
-        [ForeignKey("CompanyJobPoco")]
+        [Column("Job")]
         public Guid Job { get; set; }
-
         [Column("Application_Date")]
         public DateTime ApplicationDate { get; set; }
 
-        [Column("Time_Stamp")]
+        [Column("Time_Stamp")][Timestamp]
         public byte[] TimeStamp { get; set; }
 
         public virtual ApplicantProfilePoco ApplicantProfiles { get; set; }

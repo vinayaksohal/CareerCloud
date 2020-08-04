@@ -4,3 +4,12 @@ C:\Users\user\source\repos\CareerCloud\CareerCloud.EntityFrameworkDataAccess\obj
 C:\Users\user\source\repos\CareerCloud\CareerCloud.EntityFrameworkDataAccess\obj\Debug\netcoreapp3.1\CareerCloud.EntityFrameworkDataAccess.AssemblyInfoInputs.cache
 C:\Users\user\source\repos\CareerCloud\CareerCloud.EntityFrameworkDataAccess\obj\Debug\netcoreapp3.1\CareerCloud.EntityFrameworkDataAccess.AssemblyInfo.cs
 C:\Users\user\source\repos\CareerCloud\CareerCloud.EntityFrameworkDataAccess\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\user\source\repos\CareerCloud\CareerCloud.EntityFrameworkDataAccess\obj\Debug\netcoreapp3.1\CareerCloud.EntityFrameworkDataAccess.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\CareerCloud\CareerCloud.EntityFrameworkDataAccess\bin\Debug\netcoreapp3.1\CareerCloud.EntityFrameworkDataAccess.pdb
+C:\Users\user\source\repos\CareerCloud\CareerCloud.EntityFrameworkDataAccess\bin\Debug\netcoreapp3.1\CareerCloud.DataAccessLayer.dll
+C:\Users\user\source\repos\CareerCloud\CareerCloud.EntityFrameworkDataAccess\bin\Debug\netcoreapp3.1\CareerCloud.Pocos.dll
+C:\Users\user\source\repos\CareerCloud\CareerCloud.EntityFrameworkDataAccess\bin\Debug\netcoreapp3.1\CareerCloud.DataAccessLayer.pdb
+C:\Users\user\source\repos\CareerCloud\CareerCloud.EntityFrameworkDataAccess\bin\Debug\netcoreapp3.1\CareerCloud.Pocos.pdb
+C:\Users\user\source\repos\CareerCloud\CareerCloud.EntityFrameworkDataAccess\obj\Debug\netcoreapp3.1\CareerCloud.EntityFrameworkDataAccess.csproj.CopyComplete
+C:\Users\user\source\repos\CareerCloud\CareerCloud.EntityFrameworkDataAccess\obj\Debug\netcoreapp3.1\CareerCloud.EntityFrameworkDataAccess.dll
+C:\Users\user\source\repos\CareerCloud\CareerCloud.EntityFrameworkDataAccess\obj\Debug\netcoreapp3.1\CareerCloud.EntityFrameworkDataAccess.pdb

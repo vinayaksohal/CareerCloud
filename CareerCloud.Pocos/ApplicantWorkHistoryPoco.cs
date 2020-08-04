@@ -11,7 +11,7 @@ namespace CareerCloud.Pocos
     {
         [Key]
         public Guid Id { get; set; }
-        [ForeignKey("ApplicantProfilePoco")]
+        [Column("Applicant")]
         public Guid Applicant { get; set; }
         [Column("Company_Name")]
         public string CompanyName { get; set; }
@@ -31,7 +31,7 @@ namespace CareerCloud.Pocos
         public Int16 EndMonth { get; set; }
         [Column("End_Year")]
         public Int32 EndYear { get; set; }
-        [Column("Time_Stamp")]
+        [Column("Time_Stamp")][Timestamp]
         public Byte[] TimeStamp { get; set; }
         public virtual ApplicantProfilePoco ApplicantProfiles { get; set; }
 
