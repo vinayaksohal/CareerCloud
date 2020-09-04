@@ -14,9 +14,9 @@ namespace CareerCloud.Pocos
         [Column("Name")]
         public string Name { get; set; }
             
-        public ICollection<ApplicantProfilePoco> ApplicantProfiles { get; set; }
-        public ICollection<ApplicantWorkHistoryPoco> ApplicantWorkHistory { get; set; }
+        public virtual ICollection<ApplicantProfilePoco> ApplicantProfiles { get; set; }
+        public virtual ICollection<ApplicantWorkHistoryPoco> ApplicantWorkHistory { get; set; }
         [NotMapped]
-        public Guid Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public Guid Id { get; set; }
     }
 }

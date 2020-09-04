@@ -13,7 +13,7 @@ namespace CareerCloud.Pocos
         public Guid Id { get; set; }
         [Column("Applicant")]
         public Guid Applicant { get; set; }
-        [Column("Job")]
+        [ForeignKey("Job")]
         public Guid Job { get; set; }
         [Column("Application_Date")]
         public DateTime ApplicationDate { get; set; }

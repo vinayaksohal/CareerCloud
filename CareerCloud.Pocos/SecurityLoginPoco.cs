@@ -50,9 +50,9 @@ namespace CareerCloud.Pocos
         [Column("Time_Stamp")][Timestamp]
 
         public Byte[] TimeStamp {get;set;}
-        public ICollection<ApplicantProfilePoco> ApplicantProfiles { get; set; }
-        public ICollection<SecurityLoginsLogPoco> SecurityLoginsLogs { get; set; }
-        public ICollection<SecurityLoginsRolePoco> SecurityLoginsRoles { get; set; }
+        public virtual ICollection<ApplicantProfilePoco> ApplicantProfiles { get; set; }
+        public virtual ICollection<SecurityLoginsLogPoco> SecurityLoginsLogs { get; set; }
+        public virtual ICollection<SecurityLoginsRolePoco> SecurityLoginsRoles { get; set; }
 
     }
 }

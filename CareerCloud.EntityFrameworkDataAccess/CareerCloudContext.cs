@@ -1,8 +1,8 @@
 ﻿using CareerCloud.Pocos;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.Configuration;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
@@ -41,14 +41,16 @@ namespace CareerCloud.EntityFrameworkDataAccess
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(_connStr);
+     
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // for ApplicantEducationPoco
-            modelBuilder.Entity<ApplicantEducationPoco>()
+           modelBuilder.Entity<ApplicantEducationPoco>()
                         .HasOne<ApplicantProfilePoco>(s => s.ApplicantProfiles)
                         .WithMany(g => g.ApplicantEducations)
                         .HasForeignKey(s => s.Applicant);
+
 
             // for ApplicantJobApplications
             modelBuilder.Entity<ApplicantJobApplicationPoco>(entity =>
@@ -168,6 +170,7 @@ namespace CareerCloud.EntityFrameworkDataAccess
                .HasForeignKey(s => s.Role);
             });
 
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

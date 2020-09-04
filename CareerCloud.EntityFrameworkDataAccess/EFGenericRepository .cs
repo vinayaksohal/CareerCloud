@@ -35,12 +35,10 @@ namespace CareerCloud.EntityFrameworkDataAccess
             {
                 IQueryable<T> dbQuery = context.Set<T>();
 
-                foreach (Expression<Func<T, object>> navigationProperty in navigationProperties)
-                    dbQuery = dbQuery.Include<T, object>(navigationProperty);
+                foreach (Expression<Func<T, object>> navigationProperty in navigationProperties)                    
+                dbQuery = dbQuery.Include<T, object>(navigationProperty);
 
-                list = dbQuery
-                    .AsNoTracking()
-                    .ToList<T>();
+                list = dbQuery.ToList<T>();
             }
             return list;
         }
@@ -56,7 +54,6 @@ namespace CareerCloud.EntityFrameworkDataAccess
                     dbQuery = dbQuery.Include<T, object>(navigationProperty);
 
                 list = dbQuery
-                    .AsNoTracking()
                     .Where(where)
                     .ToList<T>();
             }
@@ -74,11 +71,12 @@ namespace CareerCloud.EntityFrameworkDataAccess
                     dbQuery = dbQuery.Include<T, object>(navigationProperty);
 
                 item = dbQuery
-                    .AsNoTracking()
                     .FirstOrDefault(where); 
             }
             return item;
         }
+
+
 
         public void Remove(params T[] items)
         {

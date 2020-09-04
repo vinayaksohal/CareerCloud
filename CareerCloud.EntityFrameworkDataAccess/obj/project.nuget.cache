@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "A4tWSZDxjR7w59/GfBMQloHhxIlDbg+ye4FaCAuK6egugzlowuj7IAU8TaoSKSg1xmkTpaDoSRUHfA/9vCWH9A==",
+  "dgSpecHash": "BaPdg9nV6hRhNCbl+cFafANvFsvBjkKYCsj3Rdjd8w9+DfSrJFRLw3o9IQGCcJ163i8/T9vdFfV1cg5k9VAPbg==",
   "success": true,
   "projectFilePath": "C:\\Users\\user\\source\\repos\\CareerCloud\\CareerCloud.EntityFrameworkDataAccess\\CareerCloud.EntityFrameworkDataAccess.csproj",
   "expectedPackageFiles": [
@@ -95,8 +95,7 @@
     "C:\\Users\\user\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\user\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
-    "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+    "C:\\Users\\user\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }

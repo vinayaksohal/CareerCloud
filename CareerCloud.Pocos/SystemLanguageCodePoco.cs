@@ -16,8 +16,8 @@ namespace CareerCloud.Pocos
         [Column("Native_Name")]
         public string NativeName { get; set; }
         
-        public ICollection<CompanyDescriptionPoco> CompanyDescriptions { get; set; }
+        public virtual ICollection<CompanyDescriptionPoco> CompanyDescriptions { get; set; }
         [NotMapped]
-        public Guid Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public Guid Id { get; set; }
     }
 }

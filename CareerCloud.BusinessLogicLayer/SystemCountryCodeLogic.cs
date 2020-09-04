@@ -2,29 +2,45 @@
 using CareerCloud.Pocos;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace CareerCloud.BusinessLogicLayer
 {
-    public class SystemCountryCodeLogic:BaseLogic<SystemCountryCodePoco>
+    public class SystemCountryCodeLogic
     {
-        public SystemCountryCodeLogic(IDataRepository<SystemCountryCodePoco> repository) : base(repository)
+        private readonly IDataRepository<SystemCountryCodePoco> _repository;
+        public SystemCountryCodeLogic(IDataRepository<SystemCountryCodePoco> repository)
         {
-
+            _repository = repository;
         }
-        public override void Add(SystemCountryCodePoco[] pocos)
+
+        public void Delete(SystemCountryCodePoco[] pocos)
+        {
+            _repository.Remove(pocos);
+        }
+        public virtual List<SystemCountryCodePoco> GetAll()
+        {
+            return _repository.GetAll().ToList();
+        }
+
+        public virtual SystemCountryCodePoco Get(string id)
+        {
+            return _repository.GetSingle(c => c.Code == id);
+        }
+
+        public  void Add(SystemCountryCodePoco[] pocos)
         {
             Verify(pocos);
-            base.Add(pocos);
+            _repository.Add(pocos);
         }
 
-        public override void Update(SystemCountryCodePoco[] pocos)
+        public void Update(SystemCountryCodePoco[] pocos)
         {
             Verify(pocos);
-            base.Update(pocos);
+            _repository.Update(pocos);
         }
-
-        protected override void Verify(SystemCountryCodePoco[] pocos)
+        protected  void Verify(SystemCountryCodePoco[] pocos)
         {
             List<ValidationException> exceptions = new List<ValidationException>();
 
