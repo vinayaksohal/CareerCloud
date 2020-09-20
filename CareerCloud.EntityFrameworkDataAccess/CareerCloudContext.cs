@@ -36,7 +36,7 @@ namespace CareerCloud.EntityFrameworkDataAccess
             var path = Path.Combine(Directory.GetCurrentDirectory(), "appsettings.json");
             config.AddJsonFile(path, false);
             var root = config.Build();
-            _connStr = root.GetSection("ConnectionStrings").GetSection("DataConnection").Value;
+            _connStr = root.GetSection("ConnectionString").GetSection("DataConnection").Value;
             }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

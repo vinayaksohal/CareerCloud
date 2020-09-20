@@ -1,0 +1,5 @@
+obj\Debug\netcoreapp3.1/SystemLanguageCode.cs \
+obj\Debug\netcoreapp3.1/SystemLanguageCodeGrpc.cs: C:/Users/user/.nuget/packages/grpc.tools/2.27.0/build/native/include/google/protobuf/timestamp.proto\
+ C:/Users/user/.nuget/packages/grpc.tools/2.27.0/build/native/include/google/protobuf/wrappers.proto\
+ C:/Users/user/.nuget/packages/grpc.tools/2.27.0/build/native/include/google/protobuf/empty.proto\
+ Protos/SystemLanguageCode.proto

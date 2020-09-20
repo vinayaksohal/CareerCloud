@@ -20,6 +20,7 @@ namespace CareerCloud.EntityFrameworkDataAccess
                     context.Entry(item).State = EntityState.Added;
                 }
                 context.SaveChanges();
+                context.Dispose();
             }
         }
 
@@ -39,7 +40,9 @@ namespace CareerCloud.EntityFrameworkDataAccess
                 dbQuery = dbQuery.Include<T, object>(navigationProperty);
 
                 list = dbQuery.ToList<T>();
+                context.Dispose();
             }
+
             return list;
         }
 
@@ -56,6 +59,7 @@ namespace CareerCloud.EntityFrameworkDataAccess
                 list = dbQuery
                     .Where(where)
                     .ToList<T>();
+                context.Dispose();
             }
             return list;
         }
@@ -71,7 +75,8 @@ namespace CareerCloud.EntityFrameworkDataAccess
                     dbQuery = dbQuery.Include<T, object>(navigationProperty);
 
                 item = dbQuery
-                    .FirstOrDefault(where); 
+                    .FirstOrDefault(where);
+                context.Dispose();
             }
             return item;
         }
@@ -87,6 +92,7 @@ namespace CareerCloud.EntityFrameworkDataAccess
                     context.Entry(item).State = EntityState.Deleted;
                 }
                 context.SaveChanges();
+                context.Dispose();
             }
         }
 
@@ -99,6 +105,7 @@ namespace CareerCloud.EntityFrameworkDataAccess
                     context.Entry(item).State = EntityState.Modified;
                 }
                 context.SaveChanges();
+                context.Dispose();
             }
         }
     }

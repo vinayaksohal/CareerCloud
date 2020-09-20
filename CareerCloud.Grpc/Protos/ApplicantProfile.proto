@@ -1,0 +1,37 @@
+syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/empty.proto";
+import "Protos/Decimal.proto";
+package customTypes;
+
+option csharp_namespace = "CareerCloud.Grpc.Protos";
+
+service ApplicantProfile{
+	rpc GetApplicantProfile(IdRequest2) returns (ApplicantProfileReply);
+    rpc GetApplicantProfiles(google.protobuf.Empty) returns (ApplicantProfiles);
+    rpc AddGetApplicantProfiles(ApplicantProfiles) returns (google.protobuf.Empty);
+    rpc UpdateGetApplicantProfiles(ApplicantProfiles) returns (google.protobuf.Empty);
+    rpc DeleteGetApplicantProfiles(ApplicantProfiles) returns (google.protobuf.Empty);
+}
+
+message  ApplicantProfiles{
+    repeated ApplicantProfileReply ApplicantProfileReplies = 1;
+}
+
+message IdRequest2 {
+	string Id = 1;
+}
+
+message ApplicantProfileReply{
+        string Id=1;
+        string Login=2;
+        customTypes.DecimalValue CurrentSalary=3;
+        customTypes.DecimalValue CurrentRate=4;
+        string Currency=5;
+        string Country=6;
+        string Province=7;
+        string Street=8;
+        string City=9;
+        string PostalCode=10;
+}

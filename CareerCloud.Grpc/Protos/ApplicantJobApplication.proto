@@ -1,0 +1,30 @@
+syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/empty.proto";
+
+option csharp_namespace = "CareerCloud.Grpc.Protos";
+
+service ApplicantJobApplication{
+	rpc GetApplicantJobApplication(IdRequest1) returns (ApplicantJobApplicationReply);
+    rpc GetApplicantJobApplications(google.protobuf.Empty) returns (ApplicantJobApplications);
+    rpc AddGetApplicantJobApplications(ApplicantJobApplications) returns (google.protobuf.Empty);
+    rpc UpdateGetApplicantJobApplications(ApplicantJobApplications) returns (google.protobuf.Empty);
+    rpc DeleteGetApplicantJobApplications(ApplicantJobApplications) returns (google.protobuf.Empty);
+}
+
+message  ApplicantJobApplications{
+    repeated ApplicantJobApplicationReply ApplicationJobApplicationReplies = 1;
+}
+
+message IdRequest1 {
+	string Id = 1;
+}
+
+message ApplicantJobApplicationReply{
+    string Id = 1;
+    string Applicant = 2;
+    string Job = 3;
+    google.protobuf.Timestamp ApplicationDate =4; 
+    bytes TimeStamp = 5; 
+}
